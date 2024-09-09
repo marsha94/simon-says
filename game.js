@@ -3,7 +3,12 @@ const gamePattern = [];
 const userClickedPattern = [];
 let level = 0;
 
-$(document).on("keypress", nextSequence);
+$(document).on("keypress", function () {
+  if (level == 0) {
+    nextSequence();
+  }
+});
+
 $(".btn").on("click", handleClicks);
 
 function playSound(colour) {
